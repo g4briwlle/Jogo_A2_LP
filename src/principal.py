@@ -17,9 +17,6 @@ class Game:
     clock : pygame.time.Clock
         A clock to control the game's frame rate.
 
-    x : int
-        An example attribute for demonstration purposes.
-
     running : bool
         Flag indicating whether the game is currently running.
 
@@ -56,7 +53,7 @@ class Game:
         self.bg_music.play(loops = -1)
 
         # Screen
-        self.screen = pygame.display.set_mode((1000, 800))
+        self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
         self.clock = pygame.time.Clock()
 
         # Game loop
@@ -78,6 +75,10 @@ class Game:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+                elif event.type == pygame.KEYDOWN:
+                    # Pressione ESC para sair do modo tela cheia e encerrar o jogo
+                    if event.key == pygame.K_ESCAPE:
+                        self.running = False
 
                 # Pause the game:
                 """ 
