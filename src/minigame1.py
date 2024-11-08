@@ -1,4 +1,4 @@
-""" Módulo de minigame de contas de matemática 'META MATH'
+""" Módulo de minigame 
 """
 
 import pygame
